@@ -13,11 +13,22 @@ function AddTask({tasks,setTasks}) {
   
   const submitHandler = (e)=>{
         e.preventDefault()
-        const taskID= _id
-        setTasks((prev)=> [...prev,{_id:taskID,title,description,priority,date,completed}])
-        setID((pre)=> pre+1)
-
-        navigate("/")
+        if(title===""){
+          alert('enter title')
+        }
+        if(description===""){
+          alert("enter description")
+        }
+        if(date===""){
+          alert("date should not be empty")
+        }else{
+          const taskID= _id
+          setTasks((prev)=> [...prev,{_id:taskID,title,description,priority,date,completed}])
+          setID((pre)=> pre+1)
+  
+          navigate("/")
+        }
+        
         
   }
   useEffect(()=>{
@@ -26,8 +37,8 @@ function AddTask({tasks,setTasks}) {
   
 
   return (
-    <div className="flex w-[65vw] bg-slate-400 p-4 rounded-2xl">
-      <form onSubmit={submitHandler} className="flex flex-col w-full gap-y-4">
+    <div className="flex md:w-[65vw] bg-slate-400 p-4 rounded-2xl w-full">
+      <form onSubmit={submitHandler} className="flex flex-col w-full gap-y-4 ">
         <label htmlFor="">Title</label>
         <input value={title} onChange={(e)=>setTitle(e.target.value)} type="text" placeholder="Enter Title " className="p-1 border outline-none" />
         <label htmlFor="">Description</label>

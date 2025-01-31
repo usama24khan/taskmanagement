@@ -32,9 +32,9 @@ function Update({tasks,setTasks}) {
     
 
   return (
-    <div className="w-[65vw] bg-slate-400 rounded-2xl p-2">
+    <div className="md:w-[65vw] w-full bg-slate-400 rounded-2xl p-2">
       
-      <div className="flex w-[65vw] bg-slate-400 p-4 rounded-2xl">
+      <div className="flex md:w-[65vw] w-full bg-slate-400 p-4 rounded-2xl">
       <form onSubmit={updateHandler} className="flex flex-col w-full gap-y-4">
         <label htmlFor="">Title</label>
         <input value={title} onChange={(e)=>setTitle(e.target.value)} type="text" placeholder="Enter Title " className="p-1 border outline-none" />

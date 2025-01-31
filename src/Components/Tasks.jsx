@@ -21,18 +21,18 @@ function Tasks({ tasks, setTasks }) {
 
   }
   return (
-    <div className="border rounded-2xl w-[65vw] bg-slate-400 p-4">
+    <div className="border rounded-2xl md:w-[65vw] w-full bg-slate-400 p-4">
       <p className="flex justify-center">
         Tasks
       </p>
       {/* --------------------------Tasks------------------ */}
 
-      <div className="grid grid-cols-3 gap-x-2 gap-y-10">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-x-2 gap-y-10 ">
       {tasks.map((task,index) => {
         return (
           <div
             key={index}
-            className="w-70 h-60 p-2 flex rounded-2xl flex-col justify-between border  bg-slate-300 "
+            className="md:w-70 w-full h-60 p-2 flex rounded-2xl flex-col justify-between border  bg-slate-300 "
           >
             <div>
               {/* -------------------Date------------ */}
@@ -67,7 +67,7 @@ function Tasks({ tasks, setTasks }) {
 
       {/* ------------------------------------------- */}
       <Link to="/add">
-        <div className="w-70 h-60 flex justify-center items-center border cursor-pointer hover:bg-slate-300 bg-slate-400 border-dashed">
+        <div className="md:w-70 w-full h-60 flex justify-center items-center border cursor-pointer hover:bg-slate-300 bg-slate-400 border-dashed">
           <p>Add </p>
         </div>
       </Link>
